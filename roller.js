@@ -4,12 +4,12 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var Random = require('random-js');
 var engine = Random.engines.mt19937().autoSeed();
-var data = require('./dice.js');
+var data = require('./static/dice.js');
 
 var serverport = 8080
 
 app.use('/images', express.static(__dirname + '/images'));
-
+app.use('/static', express.static(__dirname + '/static'));
 
 function rollDie(dieSpec) {
     // all side types for the key
@@ -35,13 +35,13 @@ io.on('connection', function(socket){
         // distribute message to everyone
         io.emit('chat message', msg);
         // dice rolls
-        io.emit('dice roll', 'images/dice/ability/'+rollDie(data.DICE.ABILITY));
-        io.emit('dice roll', 'images/dice/boost/'+rollDie(data.DICE.BOOST));
-        io.emit('dice roll', 'images/dice/challenge/'+rollDie(data.DICE.CHALLENGE));
-        io.emit('dice roll', 'images/dice/difficulty/'+rollDie(data.DICE.DIFFICULTY));
-        io.emit('dice roll', 'images/dice/force/'+rollDie(data.DICE.FORCE));
-        io.emit('dice roll', 'images/dice/proficiency/'+rollDie(data.DICE.PROFICIENCY));
-        io.emit('dice roll', 'images/dice/setback/'+rollDie(data.DICE.SETBACK));
+        io.emit('dice roll', 'images/dice/ability/'+rollDie(data.DICE.ABILITY.SIDES));
+        io.emit('dice roll', 'images/dice/boost/'+rollDie(data.DICE.BOOST.SIDES));
+        io.emit('dice roll', 'images/dice/challenge/'+rollDie(data.DICE.CHALLENGE.SIDES));
+        io.emit('dice roll', 'images/dice/difficulty/'+rollDie(data.DICE.DIFFICULTY.SIDES));
+        io.emit('dice roll', 'images/dice/force/'+rollDie(data.DICE.FORCE.SIDES));
+        io.emit('dice roll', 'images/dice/proficiency/'+rollDie(data.DICE.PROFICIENCY.SIDES));
+        io.emit('dice roll', 'images/dice/setback/'+rollDie(data.DICE.SETBACK.SIDES));
     });
 });
 
