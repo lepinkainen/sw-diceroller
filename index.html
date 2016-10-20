@@ -40,8 +40,9 @@
       });
 
       // message received
-        socket.on('dice roll', function(msg){
-        console.log(msg)
-        $('#messages').append($('<img src="'+msg+'" />'>
+      socket.on('dice roll', function(msg){
+        $('#messages').append($('<img src="'+msg+'" />'));
+        });
+     </script>
   </body>
 </html>
