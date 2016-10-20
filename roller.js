@@ -13,8 +13,10 @@ DICE = {
     ABILITY: {
         BLANK: 'blank.png',
         A:     'a.png',
+        A1:     'a.png',
         AA:    'aa.png',
         S:     's.png',
+        S1:     's.png',
         SA:    'sa.png',
         SS:    'ss.png'
     },
