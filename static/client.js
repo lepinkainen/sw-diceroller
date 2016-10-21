@@ -28,4 +28,9 @@ socket.on('chat message', function(msg){
 // message received
 socket.on('dice roll', function(msg){
     $('#messages').append($('<img src="'+msg+'" />'));
+    // Scroll to bottom, so newest result is shown.
+    window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
 });
+
+var height = $('#message_bar').css('height');
+$('#messages').css('padding-top',height);
