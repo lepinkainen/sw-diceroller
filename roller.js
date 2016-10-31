@@ -14,15 +14,15 @@ app.use('/static', express.static(__dirname + '/static'));
 function rollDie(dieSpec) {
     // all side types for the key
     var obj_keys = Object.keys(dieSpec);
-    console.log('sides:  '+obj_keys)
+    console.log('sides:  '+obj_keys);
     // random number
     var roll = Random.die(obj_keys.length)(engine);
-    console.log('roll:   '+roll)
+    console.log('roll:   '+roll);
     // random side
     var result = obj_keys[roll-1];
-    console.log('result: '+result)
+    console.log('result: '+result);
     // return image for selected side
-    return dieSpec[result]
+    return dieSpec[result];
 }
 
 app.get('/', function(req, res){
