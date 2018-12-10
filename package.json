@@ -4,7 +4,7 @@
   "description": "Roll Star Wars dice",
   "version": "0.1.0",
   "dependencies": {
-    "express": "^4.14.0",
+    "express": "^4.16.0",
     "random-js": "^1.0.8",
     "socket.io": "^2.0.0",
     "snyk": "^1.30.1"
