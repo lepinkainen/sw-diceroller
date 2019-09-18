@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.7.0
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -10,3 +10,8 @@ patch:
         patched: '2017-05-22T04:07:03.974Z'
     - socket.io > socket.io-adapter > socket.io-parser > debug > ms:
         patched: '2017-05-22T04:07:03.974Z'
+    - express > finalhandler > debug > ms:
+        patched: '2019-09-18T12:25:02.932Z'
+  'npm:debug:20170905':
+    - express > finalhandler > debug:
+        patched: '2019-09-18T12:25:02.932Z'
